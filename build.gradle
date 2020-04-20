@@ -8,9 +8,14 @@ buildscript {
     }
 }
 
-version "0.1"
+
+version "0.0.1"
 group "org.grails.plugins"
 
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 apply plugin:"eclipse"
 apply plugin:"idea"
 apply plugin:"org.grails.grails-plugin"
@@ -22,6 +27,20 @@ repositories {
     maven { url "https://repo.grails.org/grails/core" }
     mavenLocal()
 }
+
+
+publishing {
+  publications {
+      MyPublication(MavenPublication) {
+          from components.java
+          groupId = project.group
+          artifactId = "mocean-grails-sms"
+          version = project.version
+      }
+  }
+}
+
+
 
 
 dependencies {
@@ -73,6 +92,21 @@ grailsPublish {
 }
 
 
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    publications = ['MyPublication']
+    publish = true
+	pkg {
+		name = "moceansms"
+		issueTrackerUrl = "https://github.com/MoceanAPI/mocean-grails-sms/issues"
+		vcsUrl = "https://github.com/MoceanAPI/mocean-grails-sms"
+		version {
+		  attributes = ['grails-plugin': "moceansms"]
+		  name = "0.0.1"
+    }
+  }
+}
 
 assets {
     packagePlugin = true

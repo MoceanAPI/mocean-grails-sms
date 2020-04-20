@@ -1,10 +1,6 @@
 Mocean SMS Grails Plugin
 =
-~~~
-dependencies {
-    compile "org.grails.plugins:moceansms:0.0.1"
-}
-~~~
+
 
 ## Description
 This plugin provide sending SMS capability to grails framework for user using [MoceanAPI](https://moceanapi.com) service
@@ -18,6 +14,24 @@ moceanapi:
     api_secret: YOUR_MOCEAN_API_SECRET
 
 ```
+
+Add dependencies
+~~~
+dependencies {
+    ...
+    compile "org.grails.plugins:mocean-grails-sms:0.0.1"
+}
+~~~
+
+
+Add repo
+~~~
+repositories {
+    ...
+	maven { url "http://dl.bintray.com/moceanapi/plugins" }
+}
+
+~~~
 
 
 ## Usage
