@@ -5,7 +5,7 @@ Mocean SMS Grails Plugin
 ## Description
 This plugin provide sending SMS capability to grails framework for user using [MoceanAPI](https://moceanapi.com) service
 
-Try for FREE now. 20 trial SMS credits will be given upon [registration] (https://dashboard.moceanapi.com/register?fr=grails). Additional SMS credits can be requested and is subject to approval by MoceanAPI
+Try for FREE now. 20 trial SMS credits will be given upon [registration](https://dashboard.moceanapi.com/register?fr=grails). Additional SMS credits can be requested and is subject to approval by MoceanAPI
 
 ## Configuration
 Add your credentials to your application.yml like sample below.
